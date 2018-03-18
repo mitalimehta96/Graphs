@@ -37,29 +37,29 @@ main()
     int array[n];
     cout<<"\nEnter the Elements of the array: ";
 
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
       cin>>array[i];
     
       ctr=0;
-      for(int i=n/2;i>=0;i--)
+      for(int i=n/2; i>=0; i--)
         {
           maxHeapify(array,i,n);
         }
       cout<<"\nThe heap is: ";
-      for(int i=0;i<n;i++)
+      for(int i=0; i<n; i++)
        {
           cout<<array[i]<<"\t";
        }
       int size=n,temp;
-      while(size!=1)
+      while(size != 1)
         {
             ctr=0;
 
-          for(int i=size/2;i>=0;i--)
+          for(int i=size/2; i>=0; i--)
             maxHeapify(array,i,size);
 
           cout<<"\n\n\n\nHeap Array: ";
-          for(int j=0;j<n;j++)
+          for(int j=0; j<n; j++)
             {
               cout<<array[j]<<"\t";
             }
@@ -72,6 +72,6 @@ main()
         }
 
     cout<<"\n\nSorted Array: ";
-      for(int i=0;i<n;i++)
+      for(int i=0; i<n; i++)
           cout<<array[i]<<"\t";
 }
