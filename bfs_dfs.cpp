@@ -12,18 +12,18 @@ int main()
     cin>>n;
     int visited[n];
     cout<<"Enter adjacency matrix: \n";
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
         visited[i]=0;
-        for(int j=0;j<n;j++)
+        for(int j=0; j<n; j++)
         {
             cin>>a[i][j];
         }
     }
     cout<<"Adjacency matrix: "<<endl;
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0; j<n; j++)
         {
             cout<<a[i][j]<<" ";
         }
@@ -39,12 +39,12 @@ int main()
     {
         v=s.top();
         s.pop();
-        if(visited[v]==0)
+        if(visited[v] == 0)
         {
             visited[v]=1;
         for(int w=0; w<n; w++)
         {
-            if(a[v][w]==1 && visited[w]==0)
+            if(a[v][w] == 1 && visited[w] == 0)
             {
               s.push(w);
             }
@@ -72,18 +72,18 @@ int main()
     cin>>n;
     int visited[n];
     cout<<"Enter adjacency matrix: \n";
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
         visited[i]=0;
-        for(int j=0;j<n;j++)
+        for(int j=0; j<n; j++)
         {
             cin>>a[i][j];
         }
     }
     cout<<"Adjacency matrix: "<<endl;
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0; j<n; j++)
         {
             cout<<a[i][j]<<" ";
         }
@@ -102,7 +102,7 @@ int main()
         q.pop();
         for(int w=0; w<n; w++)
         {
-            if(a[v][w]==1 && visited[w]==0)
+            if(a[v][w] == 1 && visited[w] == 0)
             {
               visited[w]=1;
               q.push(w);
