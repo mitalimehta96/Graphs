@@ -23,16 +23,16 @@ struct node
 node* insertNode(node *root,int n)
 {
 
-    if(root==NULL)
+    if(root == NULL)
     {
-        root=new node;
-        root->data=n;
-        root->left=root->right=NULL;
+        root = new node;
+        root->data = n;
+        root->left = root->right = NULL;
     }
-    else if(n<=root->data)
-       root->left= insertNode(root->left,n);
-    else if(n>root->data)
-        root->right=insertNode(root->right,n);
+    else if(n <= root->data)
+       root->left = insertNode(root->left,n);
+    else if(n > root->data)
+        root->right = insertNode(root->right,n);
         return root;
 }
 
@@ -41,7 +41,7 @@ node* insertNode(node *root,int n)
 node* searchNode(node* root)
 {
     int k;
-    if(root==NULL)
+    if(root == NULL)
     {
        cout<<"\nTree is empty. \n";
     }
@@ -51,17 +51,17 @@ node* searchNode(node* root)
         cin>>k ;
         node  *p ;
         p=root ;
-        while(p!=NULL)
+        while(p != NULL)
             {
-                if(p->data==k)
+                if(p->data == k)
                 break ;
-                if(k<p->data)
+                if(k < p->data)
                 p=p->left ;
                 else
                 p=p->right ;
             }
 
-        if(p==NULL)
+        if(p == NULL)
         cout<<"\nRequired node not found. \n";
         else
         cout<<"\nNode found : "<<p->data<<endl ;
@@ -71,8 +71,8 @@ node* searchNode(node* root)
 
 node* minright(node* root)
 {
-    while(root->left!=NULL)
-       root->left= minright(root->left);
+    while(root->left != NULL)
+       root->left = minright(root->left);
     return root;
 }
 
@@ -80,7 +80,7 @@ node* minright(node* root)
 node* deleteNode(node* root,int n)
 {
 
-    if(root==NULL)
+    if(root == NULL)
        return root;
 
 
@@ -92,17 +92,17 @@ node* deleteNode(node* root,int n)
         root->right = deleteNode(root->right, n);
      else
      {
-         if(root->left==NULL)
+         if(root->left == NULL)
      {
-         node *temp=new node;
-         temp=root->right;
+         node *temp = new node;
+         temp = root->right;
          delete root;
          return temp;
      }
-     else if(root->right==NULL)
+     else if(root->right == NULL)
      {
-         node *temp=new node;
-         temp=root->left;
+         node *temp = new node;
+         temp = root->left;
          delete root;
          return temp;
      }
@@ -119,7 +119,7 @@ node* deleteNode(node* root,int n)
 // inorder traversal of the tree-(left-root-right)
  void inorder(node* root)
 {
-        if(root!=NULL)
+        if(root != NULL)
         {
         inorder(root->left);
         cout<<root->data<< " ";
@@ -132,7 +132,7 @@ node* deleteNode(node* root,int n)
  void preorder(node* root)
 {
 
-    if(root!=NULL)
+    if(root != NULL)
     {
     cout<<root->data<< " ";
     preorder(root->left);
@@ -144,7 +144,7 @@ node* deleteNode(node* root,int n)
 // postorder traversal-(left-right-root)
  void postorder(node* root) 
 {
-    if(root!=NULL)
+    if(root != NULL)
     {
      postorder(root->left);
      postorder(root->right);
